@@ -45,11 +45,10 @@
                 cookie: true,
                 xfbml: true,
                 version: 'v2.7' //筆者目前是v3.1
-            }).then(()=>{
-                check();
-            });
+            })
 
             FB.AppEvents.logPageView();
+            check();
         };
 
         (function (d, s, id) {
