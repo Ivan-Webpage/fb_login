@@ -10,7 +10,7 @@
     <script>
         function showData() {
             FB.api('/me', {
-                'fields': 'id,name,last_name,middle_name,first_name,gender,email,hometown,about,age_range,birthday,picture,name_format,short_name,payment_pricepoints,shared_login_upgrade_required_by,profile_pic,quotes,token_for_business,supports_donate_button_in_live_video,sports,significant_other,inspirational_people,install_type,installed,is_guest_user,languages,link,meeting_for,favorite_athletes,id_for_avatars,favorite_teams'
+                'fields': 'id,name,last_name,middle_name,first_name,gender,email,hometown,about,age_range,birthday,picture'
             }, function (response2) {
                 console.log(response2);
             });
