@@ -8,27 +8,6 @@
 
 <body>
     <script>
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: '280410214673015',//15碼數字字串不含大括號
-                cookie: true,
-                xfbml: true,
-                version: 'v2.7' //筆者目前是v3.1
-            }).then(
-                check();
-            );
-
-            FB.AppEvents.logPageView();
-        };
-
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
         function showData() {
             FB.api('/me', {
                 'fields': 'id,name,last_name,middle_name,first_name,gender,email,hometown,about,age_range,birthday,picture,name_format,short_name,payment_pricepoints,shared_login_upgrade_required_by,profile_pic,quotes,token_for_business,supports_donate_button_in_live_video,sports,significant_other,inspirational_people,install_type,installed,is_guest_user,languages,link,meeting_for,favorite_athletes,id_for_avatars,favorite_teams'
@@ -59,6 +38,27 @@
                 console.log(response);
             });
         }
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '280410214673015',//15碼數字字串不含大括號
+                cookie: true,
+                xfbml: true,
+                version: 'v2.7' //筆者目前是v3.1
+            }).then(
+                check();
+            );
+
+            FB.AppEvents.logPageView();
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     </script>
     <button onclick="check()">檢查登入</button>
     <button onclick="login()">登入</button>
